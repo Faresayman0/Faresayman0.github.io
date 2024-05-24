@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Bar } from 'react-chartjs-2'; // استيراد مكون Bar
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -10,8 +11,6 @@ import {
     Filler,
     Legend,
 } from 'chart.js';
-import { Bar, Line } from 'react-chartjs-2';
-import {faker} from '@faker-js/faker';
 import Admin from '../../../logic/admin';
 
 ChartJS.register(
@@ -25,20 +24,20 @@ ChartJS.register(
     Legend
 );
 
-
-
 function Achart() {
-    let [regions,setRegions] = useState(undefined);
-    let [counts,setCounts] = useState(undefined);
-    useEffect(()=>{
+    let [regions, setRegions] = useState(undefined);
+    let [counts, setCounts] = useState(undefined);
+
+    useEffect(() => {
         getdata();
-    },[]);
-    const getdata = async()=>{
+    }, []);
+
+    const getdata = async () => {
         let call_api = new Admin();
         let link_api = "http://127.0.0.1:8000/api/sanai3i/admin/getWorkerByRegion";
         let amin_token = sessionStorage.getItem('adminToken');
-        let returnedData = await call_api.getAlldata(link_api,{"remember_token":amin_token}); 
-        let arr1  = [];
+        let returnedData = await call_api.getAlldata(link_api, { "remember_token": amin_token });
+        let arr1 = [];
         let arr2 = [];
         (returnedData.regions).forEach(element => {
             arr1.push(element['city name']);
@@ -47,29 +46,31 @@ function Achart() {
         setRegions([...arr1]);
         setCounts([...arr2]);
     }
+
     const data = {
-        labels:(regions!==undefined)?[...(regions)]:[],
+        labels: (regions !== undefined) ? [...(regions)] : [],
         datasets: [
             {
                 label: 'Regions',
-                data: (regions!==undefined)?regions:[],
+                data: (regions !== undefined) ? regions : [],
                 backgroundColor: 'rgba(255, 99, 132, 0.5)',
             },
             {
                 label: 'Counts of Workers',
-                data: (counts!==undefined)?counts:[],
+                data: (counts !== undefined) ? counts : [],
                 backgroundColor: 'rgba(53, 162, 235, 0.5)',
             },
         ],
     };
+
     const options = {
-        indexAxis: 'x' ,
+        indexAxis: 'x',
         elements: {
             bar: {
-            borderWidth: 2,
+                borderWidth: 2,
             },
         },
-        data:(counts!==undefined)?[...(counts)]:[],
+        data: (counts !== undefined) ? [...(counts)] : [],
         responsive: true,
         plugins: {
             legend: {
@@ -81,11 +82,12 @@ function Achart() {
             },
         }
     };
+
     return (
-            <div className='cont'>
-                <h1>Worker in Region Chart</h1>
-                {(regions!==undefined)?<Bar className='charts' options={options} data={data} />:<div className='d-flex justify-content-center align-items-center p-2'><div className='empty'></div></div>}
-            </div>
+        <div className='cont'>
+            <h1>Worker in Region Chart</h1>
+            {(regions !== undefined) ? <Bar className='charts' options={options} data={data} /> : <div className='d-flex justify-content-center align-items-center p-2'><div className='empty'></div></div>}
+        </div>
     )
 }
 
