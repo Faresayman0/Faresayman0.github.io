@@ -1,0 +1,135 @@
+
+/* Ensure elements are centered for mobile devices */
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items to start from top */
+  align-items: center;
+}
+
+/* Add margin to move elements down */
+.container {
+  margin-top: 10vh; /* Adjust this value as needed */
+}
+
+/* Design responsive for mobile screens */
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    max-width: 500px;
+    margin: 10vh auto 0; /* Adjust this value as needed */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align items to start from top */
+    box-sizing: border-box;
+  }
+
+  h1, h2, h3, p {
+    font-size: 4vw;
+    text-align: center;
+  }
+
+  .btn {
+    width: 80%;
+    padding: 10px;
+    font-size: 4vw;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+  }
+}
+
+/* Ensure all containers are centered */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align items to start from top */
+  width: 100%;
+  margin-top: 10vh; /* Adjust this value as needed */
+}
+
+.header, .main, .footer {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.btn {
+  max-width: 300px;
+  min-width: 150px;
+  width: 80%;
+  padding: 10px;
+  font-size: 1em;
+}
+
+input {
+  max-width: 300px;
+  min-width: 150px;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+/* Remove background image */
+body {
+  background: none;
+}
+
+/* Ensure the appbar is fixed at the top */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+}
+
+/* Appbar styles */
+.navbar {
+  width: 100%;
+  position: fixed; /* Ensure it stays at the top */
+  top: 0;
+  z-index: 1000; /* Ensure it is above other elements */
+}
+
+.navbar .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-image {
+  max-width: 50px; /* Adjust this value as needed */
+  height: auto;
+}
+
+.personal-image img {
+  max-width: 50px; /* Adjust this value as needed */
+  height: auto;
+}
+
+/* Ensure content doesn't go under the navbar */
+body {
+  padding-top: 70px; /* Adjust this value based on the height of the navbar */
+}
