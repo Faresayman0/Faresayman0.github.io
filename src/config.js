@@ -2,7 +2,7 @@
 // src/config.js
 
 const config = {
-  API_URL: 'https://sanai3i-backend-4.onrender.com', // استبدل هذا بالعنوان الصحيح لخدمة الـ Backend الخاصة بك
+  API_URL: 'https://sanai3i-backend-1.onrender.com', // استبدل هذا بالعنوان الصحيح لخدمة الـ Backend الخاصة بك
 };
 
 export default config;
