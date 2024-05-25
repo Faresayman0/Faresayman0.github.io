@@ -26,7 +26,7 @@ function Search() {
             setMessage({category_id:'برجاء اختار القسم'});
         }else{
             let call_api = new Customer();
-            let link_api = `http://127.0.0.1:8000/api/sanai3i/customer/recommendations/${chatbot.customer_id}/${chatbot.category_id}`;
+            let link_api = `'https://sanai3i-backend-3.onrender.com' + '/api/sanai3i/customer/recommendations'/${chatbot.customer_id}/${chatbot.category_id}`;
             let worker_token = sessionStorage.getItem('token');
             let returnedData = await call_api.getchatbotData(link_api,{"remember_token":worker_token,...chatbot});
             // console.log(returnedData.workers);
