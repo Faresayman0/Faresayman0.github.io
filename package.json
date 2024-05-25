@@ -29,11 +29,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
-  "homepage": "https://Faresayman0.github.io/",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -53,7 +50,6 @@
     ]
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.6.0",
-    "gh-pages": "^6.1.1"
+    "@faker-js/faker": "^7.6.0"
   }
 }

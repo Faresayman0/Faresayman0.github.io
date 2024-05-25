@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Admin from '../../logic/admin';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import personalImage from '../../Assets/images/user.jpg';
 export default function Categories() {
     let [categories,setCategories] = useState(undefined);
     let [updatedata,setUpdateData] = useState(undefined);

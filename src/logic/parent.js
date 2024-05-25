@@ -181,4 +181,4 @@ Parent.prototype.Deletdata = async (link,id,Custom_headers)=>{
     return {...res};
 }
 
-// 'https://sanai3i-backend-3.onrender.com'/api/admin/allusers/deletecustomer
+// http://127.0.0.1:8000/api/admin/allusers/deletecustomer
