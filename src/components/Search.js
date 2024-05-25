@@ -44,7 +44,7 @@ function Search() {
     const getWorkers = async(category_id,city_id,quality_rate,time_rate,price_rate)=>{
         const obj = {category_id,city_id,quality_rate,price_rate,time_rate}
         let call_api = new Customer();
-        let link_api = `http://127.0.0.1:8000/api/sanai3i/customer/filtration`;
+        let link_api = `'https://sanai3i-backend-3.onrender.com'/api/sanai3i/customer/filtration`;
         let worker_token = sessionStorage.getItem('token');
         let returnedData = await call_api.Postdata(link_api,{...obj},{"remember_token":worker_token});
         if([...(Object.values(returnedData))][0]==="no data found"){
@@ -56,14 +56,14 @@ function Search() {
     }
     const getCategories = async()=>{
         let call_api = new Customer();
-        let link_api = `http://127.0.0.1:8000/api/sanai3i/categories`;
+        let link_api = `'https://sanai3i-backend-3.onrender.com'/api/sanai3i/categories`;
         let worker_token = sessionStorage.getItem('token');
         let returnedData = await call_api.getAlldata(link_api,{"remember_token":worker_token});
         setCategories([...(returnedData.categories)]);
     }
     const getRegions = async()=>{
         let call_api = new Customer();
-        let link_api = `http://127.0.0.1:8000/api/sanai3i/all-region`;
+        let link_api = `'https://sanai3i-backend-3.onrender.com'/api/sanai3i/all-region`;
         let worker_token = sessionStorage.getItem('token');
         let returnedData = await call_api.getAlldata(link_api,{"remember_token":worker_token});
         setRegions([...(returnedData.region)]);
