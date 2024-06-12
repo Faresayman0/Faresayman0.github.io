@@ -10,7 +10,7 @@ import { Pagination } from "swiper";
 import { Link, useNavigate } from 'react-router-dom';
 function Home() {
     let [sanai3i,setSanai3i] = useState(undefined);
-    let [Categories,setCategories] = useState([]); 
+    let [Categories,setCategories] = useState([]);
     const navigator = useNavigate();
     useEffect(()=>{
        // getdata();
